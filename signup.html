@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - OPPJAR</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="signup-page">
+      <div class="container-fluid">
+        <img
+          class="logo"
+          src="./assets/img/oppjar-logo-white.png"
+          alt="oppjar"
+        />
+        <div class="signup-form">
+          <form>
+            <div class="signup-form-input">
+              <h2>CREATE AN ACCOUNT</h2>
+              <p class="note">
+                Already have an account <a href="#">Sign In</a>
+              </p>
+              <section>
+                <h3>Sign-in information</h3>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="col-sm-6">
+                    <div class="form-group m-b-0">
+                      <label for="password">Password</label>
+                      <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="Password"
+                      />
+                    </div>
+                    <div class="input-field-note">
+                      <div class="form-row">
+                        <div class="col-sm-6">
+                          <p class="m-b-0">Passwords must be at least:</p>
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="m-b-0">
+                            - 6 characters<br />- 1 non alphanumeric
+                            character<br />- 1 lowercase ('a'-'b')<br />- 1
+                            uppercase ('A'-'Z')
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group m-b-0">
+                      <label for="confirm_password">Confirm Password</label>
+                      <input
+                        type="password"
+                        name="confirm_password"
+                        id="confirm_password"
+                        class="form-control"
+                        placeholder="Confirm Password"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="line-break"></div>
+              </section>
+
+              <section>
+                <h3>Personal information</h3>
+                <div class="form-row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="first_name">First Name</label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        class="form-control"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group m-b-0">
+                      <label for="last_name">Last Name</label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        id="last_name"
+                        class="form-control"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group m-b-0">
+                      <label for="confirm_password">Birthday</label>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="02/02/2020"
+                        />
+                        <div class="input-group-append">
+                          <span class="icon-calendar" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="ssn">SSN</label>
+                      <div class="form-row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              class="form-control text-center"
+                              value="***"
+                              maxlength="3"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <!-- <div class="dashed-break-line"></div> -->
+                            <input
+                              type="password"
+                              class="form-control text-center w-90"
+                              value="**"
+                              maxlength="2"
+                            />
+                            <!-- <div class="dashed-break-line"></div> -->
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              class="form-control text-center"
+                              value="****"
+                              maxlength="4"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="address_">Address 1</label>
+                  <input
+                    type="text"
+                    name="address_1"
+                    id="address_1"
+                    class="form-control"
+                    placeholder="Address 1"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="address_2">Address 2</label>
+                  <input
+                    type="text"
+                    name="address_2"
+                    id="address_2"
+                    class="form-control"
+                    placeholder="Address 2"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="col-sm-4">
+                    <div class="form-group m-b-0">
+                      <label for="city">City</label>
+                      <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        class="form-control"
+                        placeholder="City"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group m-b-0">
+                      <label for="city">State</label>
+                      <select class="form-control">
+                        <option value="texas">Texas</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group m-b-0">
+                      <label for="city">ZipCode</label>
+                      <input
+                        type="text"
+                        name="zipcode"
+                        id="zipcode"
+                        class="form-control"
+                        placeholder="Zipcode"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="line-break"></div>
+              </section>
+
+              <section>
+                <h3>Type of Account</h3>
+                <div class="checkbox-section">
+                  <input
+                    class="form-check-input custom-radio"
+                    type="radio"
+                    value="0"
+                    id="parent"
+                    name="type_of_account"
+                  />
+                  <label class="form-check-label" for="parent">
+                    <strong>Parent</strong>
+                    <p>
+                      A parent can create a child account and can give gifts to
+                      other children in Oppjar
+                    </p>
+                  </label>
+                  <input
+                    class="form-check-input custom-radio"
+                    type="radio"
+                    value="1"
+                    id="giver"
+                    name="type_of_account"
+                  />
+                  <label class="form-check-label" for="giver">
+                    <strong>Giver</strong>
+                    <p>
+                      A giver can give gifts to relative's children and others
+                    </p>
+                  </label>
+                </div>
+              </section>
+            </div>
+
+            <div class="signup-form-button">
+              <div class="form-row">
+                <div class="col-sm-6">
+                  <button type="submit" class="form-btn btn-cancel">
+                    Cancel
+                  </button>
+                </div>
+                <div class="col-sm-6">
+                  <button type="submit" class="form-btn btn-submit">
+                    Create
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+/* custom checkbox */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 1px solid #899199;
+  border-radius: 5px;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #899199;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #899199;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* custom checkbox */
+
+/* custom radio */
+.custom-radio:checked,
+.custom-radio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.custom-radio:checked + label,
+.custom-radio:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+.custom-radio:checked + label:before,
+.custom-radio:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+.custom-radio:checked + label:after,
+.custom-radio:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #f1b338;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.custom-radio:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.custom-radio:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/* custom radio */
+
+/* custom checkbox as toggle */
+.toggle{
+  position: relative
+  display: block
+  width: 40px
+  height: 20px
+  cursor: pointer
+  -webkit-tap-highlight-color: transparent
+  transform: translate3d(0,0,0)
+}
+.toggle:before{
+    content: "";
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 14px;
+    display: block;
+    background: #E65A5A;
+    border-radius: 8px;
+    transition: background .2s ease}
+  .toggle:before span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(#E65A5A,.5);
+    transition: all .2s ease}
+    .toggle:before span:before{
+      content: "";
+      position: absolute;
+      display: block;
+      margin: -18px;
+      width: 56px;
+      height: 56px;
+      background: rgba($primary,.5);
+      border-radius: 50%;
+      transform: scale(0);
+      opacity: 1;
+      pointer-events: none}
+
+#cbx:checked + .toggle:before{
+    background: $primary-light}
+  #cbx:checked + .toggle:before span{
+    background: $primary
+    transform: translateX(20px)
+    transition: all .2s cubic-bezier(.8,.4,.3,1.25), background .15s ease
+    box-shadow: 0 3px 8px rgba($primary,.2)
+    &:before
+      transform: scale(1)
+      opacity: 0
+      transition: all .4s ease}
+/* custom checkbox as toggle */
