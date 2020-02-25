@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Child Page - OPPJAR</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="main-page">
+      <div class="sidebar">
+        <a href="index.html">
+          <img
+            src="./assets/img/oppjar-logo-white.png"
+            alt="oopjar"
+            class="logo"
+          />
+        </a>
+        <div class="break-line"></div>
+        <div class="menu">
+          <ul>
+            <li class="active">
+              <a href="index.html"><span class="icon icon-home"></span>Home</a>
+            </li>
+            <li>
+              <a href="give.html"><span class="icon icon-gift"></span>Give</a>
+            </li>
+            <li>
+              <a href="setting.html"
+                ><span class="icon icon-setting"></span>Setting</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="header">
+          <div class="right-section">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn account-section dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src="./assets/img/avatar-2.jpg" alt="" />
+                <span>John Doe</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="child-page content-section">
+            <div class="children-page">
+              <div class="children-page-backlink">
+                <a href="index.html"
+                  ><span class="icon icon-back"></span>Back to Child List</a
+                >
+              </div>
+              <div class="children-page-header">
+                <div>
+                  <h3 class="title">Create Child Page</h3>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-cancel">Cancel</button>
+                  <button
+                    type="button"
+                    class="btn btn-create"
+                    onclick="document.getElementById('create_page').submit()"
+                  >
+                    Create
+                  </button>
+                </div>
+              </div>
+
+              <div class="children-page-body">
+                <div class="create-page d-flex">
+                  <form id="create_page">
+                    <div class="cover-section">
+                      <img
+                        src="./assets/img/cover-photo.jpg"
+                        alt=""
+                        class="cover-photo"
+                      />
+                      <div class="upload-icon-section">
+                        <input
+                          class="d-none"
+                          type="file"
+                          onchange="readURL(this)"
+                          id="upload_cover"
+                        />
+                        <span class="icon icon-camera"></span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div>
+                        <div
+                          class="photo-upload position-relative overflow-hidden mr-5"
+                        >
+                          <img
+                            src="./assets/img/avatar-2.jpg"
+                            alt=""
+                            id="upload_photo"
+                          />
+                          <label class="photo-overlay" for="select_upload">
+                            <span class="icon icon-camera"></span>
+                          </label>
+                          <input
+                            class="d-none"
+                            type="file"
+                            onchange="readURL(this)"
+                            id="select_upload"
+                          />
+                        </div>
+                        <span class="title">Upload profile picture</span>
+                      </div>
+                      <div class="page-info d-flex flex-1 flex-wrap">
+                        <div class="form-group mr-20 has-error">
+                          <label for="firt_name">First Name</label>
+                          <input
+                            type="text"
+                            class="form-control input-error"
+                            id="first_name"
+                            placeholder="First Name"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            this is a required input field
+                          </div>
+                        </div>
+                        <div class="form-group mr-20">
+                          <label for="last_name">Last Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="last_name"
+                            placeholder="Last Name"
+                          />
+                        </div>
+                        <div class="form-group mr-20">
+                          <label for="birthday">Birthday</label>
+                          <div class="input-group">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="birthday"
+                              placeholder="02/02/2020"
+                            />
+                            <div class="input-group-append">
+                              <span class="icon-calendar" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group mr-20">
+                          <label for="schol">School</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="schol"
+                            placeholder="School"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            $("#upload_photo").attr("src", e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

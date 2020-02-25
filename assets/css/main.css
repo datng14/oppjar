@@ -32,24 +32,61 @@ select.form-control {
 
 .input-group .input-group-append {
   position: absolute;
-  right: 12px;
+  right: 15px;
   top: 6px;
 }
 
-.m-0 {
-  margin: 0;
+.btn:hover,
+.btn:focus,
+.btn:active {
+  box-shadow: none;
+  outline: none;
 }
 
-.m-b-0 {
-  margin-bottom: 0;
+.mr-20 {
+  margin-right: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .text-center {
   text-align: center;
 }
 
+.form-control.input-error {
+  border-color: #db6c6c;
+}
+
+.form-group.has-error .invalid-feedback {
+  display: block;
+  text-align: right;
+  color: #db6c6c;
+}
+
 .icon-calendar {
   background: url(../img/icon-calendar.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  z-index: 10;
+}
+
+.icon-eye-show {
+  background: url(../img/icon-eye-show.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  z-index: 10;
+}
+
+.icon-eye-unshow {
+  background: url(../img/icon-eye-unshow.svg);
   background-size: cover;
   height: 24px;
   width: 24px;
@@ -96,6 +133,14 @@ select.form-control {
   display: inline-block;
 }
 
+.icon-edit-1 {
+  background: url(../img/icon-edit-1.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
 .icon-link {
   background: url(../img/icon-link.svg);
   background-size: cover;
@@ -106,6 +151,70 @@ select.form-control {
 
 .icon-link:hover {
   background: url(../img/icon-link-clicked.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-back {
+  background: url(../img/icon-back.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-camera {
+  background: url(../img/icon-camera.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-search {
+  background: url(../img/icon-search.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-like {
+  background: url(../img/icon-like.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-comment {
+  background: url(../img/icon-comment.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-dashboard {
+  background: url(../img/icon-dashboard.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-photo {
+  background: url(../img/icon-photo.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-video {
+  background: url(../img/icon-video.svg);
   background-size: cover;
   height: 24px;
   width: 24px;

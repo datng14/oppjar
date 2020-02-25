@@ -64,7 +64,8 @@
   opacity: 1;
   display: block;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 .forgot-password {
@@ -146,7 +147,8 @@
   margin-bottom: 5px;
 }
 
-.signup-form .signup-form-input section .input-field-note p {
+.signup-form .signup-form-input section .input-field-note p,
+.change-password-page section .input-field-note p {
   font-size: 10px;
   color: #585a5d;
   margin-top: 2px;
@@ -167,7 +169,8 @@
   font-size: 16px;
   opacity: 1;
   display: block;
-  font-weight: bold;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 .signup-form .signup-form-button .btn-submit,
@@ -321,27 +324,30 @@
 }
 
 .sidebar .menu ul {
-  margin-left: 15px;
-  margin-top: 20px;
+  margin: 20px 10px 0 15px;
   padding: 0;
 }
 
 .sidebar .menu ul > li {
   list-style-type: none;
+}
+
+.sidebar .menu ul > li > a {
   padding: 6px;
   color: #fff;
   font-size: 13px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  line-height: 26px;
 }
 
 .sidebar .menu .icon {
   margin-right: 15px;
 }
 
-.sidebar .menu ul > li:hover,
-.sidebar .menu ul > li:active,
+.sidebar .menu ul > li > a:hover,
+.sidebar .menu ul > li > a:active,
 .sidebar .menu ul > li.active {
   background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
     0% no-repeat padding-box;
@@ -349,6 +355,7 @@
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .main-content {
@@ -366,7 +373,8 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 3px #4d4d4d29;
   border-radius: 21px;
-  padding: 4px 10px 2px 4px;
+  padding: 2px 10px 2px 2px;
+  box-shadow: none;
 }
 
 .main-content .header .right-section img {
@@ -418,6 +426,26 @@
   background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
     0% no-repeat padding-box;
   border-radius: 24px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.main-content
+  .content-section
+  .children-page
+  .children-page-header
+  .btn-cancel {
+  font-size: 16px;
+  color: #585a5d;
+  background: transparent linear-gradient(180deg, #f0f0f0 0%, #c0c7cc 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: 500;
+  line-height: 30px;
 }
 
 .main-content .content-section .children-page .children-page-body {
@@ -428,6 +456,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   thead
   th {
@@ -439,6 +468,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   thead
   th:not(:first-child) {
@@ -449,6 +479,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   tbody
   td {
@@ -460,6 +491,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   tbody
   td:not(:first-child) {
@@ -470,6 +502,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   tbody
   td
@@ -485,6 +518,7 @@
   .content-section
   .children-page
   .children-page-body
+  .children-info
   .table
   tbody
   td
@@ -494,4 +528,349 @@
   margin-right: 10px;
   cursor: pointer;
 }
+
+.table a {
+  text-decoration: none;
+  color: #585a5d;
+}
+
+.table .username {
+  font-weight: 500;
+}
 /* Home page */
+
+/* Create Child page */
+.main-content .content-section .children-page .children-page-backlink a {
+  font-size: 13px;
+  color: #899199;
+}
+
+.main-content .content-section .children-page .children-page-backlink a .icon {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.photo-upload,
+.photo-upload img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photo-upload .photo-overlay .icon {
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  top: 10%;
+  cursor: pointer;
+}
+
+.photo-upload .photo-overlay {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: -30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 90px 90px;
+  margin-bottom: 0;
+  left: 0;
+}
+
+.main-page .title {
+  color: #899199;
+  font-size: 13px;
+}
+
+.main-content .content-section .children-page .children-page-body .create-page {
+  margin-bottom: 200px;
+}
+
+.main-content
+  .content-section
+  .children-page
+  .children-page-body
+  .create-page
+  .page-info {
+  max-width: 650px;
+}
+
+.main-content
+  .content-section
+  .children-page
+  .children-page-body
+  .create-page
+  .page-info
+  input.form-control {
+  width: 250px;
+  height: 45px;
+}
+/* Create Child page */
+
+/* Give page */
+.give-page .children-page-body .btn-create {
+  font-size: 16px;
+  color: #fff;
+  background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  width: 150px;
+  height: 50px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.give-page .search-field {
+  height: 45px;
+  border-radius: 30px;
+  background: #f2f9ff 0% 0% no-repeat padding-box;
+}
+
+.give-page .search-field .input-group-prepend {
+  width: 50px;
+}
+
+.give-page .search-field .icon {
+  width: 16px;
+  height: 16px;
+  margin: 15px;
+}
+
+.give-page .search-field .search-input {
+  width: 500px;
+  height: 45px;
+  background: #f2f9ff 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  border: none;
+  color: #c0c7cc;
+}
+
+.give-page .search-field .search-input::placeholder {
+  color: #c0c7cc;
+  font-size: 13px;
+}
+
+.give-page .search-field .search-input:focus {
+  box-shadow: none;
+  outline: none;
+}
+/* Give page */
+
+/* setting page */
+.setting-page .setting-info {
+  max-width: 650px;
+}
+
+.setting-page .setting-info .setting-info-header {
+  width: 650px;
+}
+
+.setting-page .setting-info .btn-create {
+  font-size: 16px;
+  color: #fff;
+  background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.setting-page .setting-info .btn-cancel {
+  font-size: 16px;
+  color: #585a5d;
+  background: transparent linear-gradient(180deg, #f0f0f0 0%, #c0c7cc 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  min-width: 100px;
+  height: 50px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.setting-page .setting-info .setting-info-header {
+  border-bottom: 1px solid #c9d1d6;
+  padding-bottom: 5px;
+}
+
+.setting-page .setting-info h3 {
+  font-size: 20px;
+  color: #4f87b8;
+}
+
+.setting-page .setting-info .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.setting-page .setting-info .id-info {
+  font-size: 13px;
+  font-weight: bold;
+  color: #3b3d40;
+  margin-bottom: 20px;
+}
+/* setting page */
+
+/* change password page */
+.change-password-info input.form-control {
+  width: 300px;
+  height: 45px;
+}
+
+.change-password-info .input-group .input-group-append {
+  top: 10px;
+}
+
+.changing-modal-success {
+  background: transparent;
+  border: none;
+  width: 430px;
+}
+
+.changing-modal-success .main-modal-content {
+  font-size: 20px;
+  color: #4f87b8;
+  margin-bottom: 20px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.changing-modal-success .sub-modal-content {
+  font-size: 16px;
+  color: #585a5d;
+}
+
+.changing-modal-success .modal-body {
+  padding: 40px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  width: 430px;
+  height: 180px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.changing-modal-success .modal-footer {
+  border-top: none;
+  width: 100%;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.changing-modal-success .modal-footer .btn-done {
+  background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  color: #ffffff;
+  font-size: 16px;
+  width: 430px;
+  height: 50px;
+  margin: 0;
+  border: 0;
+}
+/* change password page */
+
+/* Child page */
+.child-page.content-section {
+  max-width: 910px;
+  margin: 0 auto;
+}
+
+.child-page .main-content {
+  padding: 0;
+}
+
+.child-page .header {
+  width: 100%;
+  height: 60px;
+  background: transparent linear-gradient(180deg, #4f87b8 0%, #4485d1 100%) 0%
+    0% no-repeat padding-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+}
+
+.child-page .header a.dashboard {
+  width: 185px;
+  height: 40px;
+  background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #3d3d3d29;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.child-page .header .dashboard:hover {
+  text-decoration: none;
+}
+
+.child-page .header .logo {
+  width: 181px;
+}
+
+.child-page .header .dashboard .icon {
+  margin-right: 10px;
+}
+
+.child-page .child-timeline-page {
+  width: 850px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.child-page .cover-section {
+  width: 850px;
+  height: 300px;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.child-page .cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.child-page .upload-icon-section {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.child-page .icon-camera {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
+
+.child-page .profile-section {
+  position: absolute;
+  bottom: -45px;
+  left: 20px;
+}
+
+.child-page .btn-give {
+  width: 200px;
+  height: 50px;
+  background: transparent linear-gradient(180deg, #f1b338 0%, #e68722 100%) 0%
+    0% no-repeat padding-box;
+  border-radius: 24px;
+  position: absolute;
+  bottom: -25px;
+  right: 50px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 34px;
+}
+/* Child page */

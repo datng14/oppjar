@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Page - OPPJAR</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="child-page">
+      <div class="main-content">
+        <div class="header">
+          <a class="dashboard" href="index.html">
+            <span class="icon icon-dashboard"></span>Back to Dashboard
+          </a>
+          <img
+            class="logo"
+            src="./assets/img/oppjar-logo-white.png"
+            alt="oppjar"
+          />
+          <div class="right-section">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn account-section dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src="./assets/img/avatar-2.jpg" alt="" />
+                <span>John Doe</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="child-timeline-page">
+          <div class="cover-section">
+            <img
+              src="./assets/img/cover-photo.jpg"
+              alt=""
+              class="cover-photo"
+            />
+            <div class="upload-icon-section">
+              <input
+                class="d-none"
+                type="file"
+                onchange="readURL(this)"
+                id="upload_cover"
+              />
+              <span class="icon icon-camera"></span>
+            </div>
+            <div class="profile-section">
+              <div class="photo-upload position-relative overflow-hidden">
+                <img
+                  src="./assets/img/avatar-2.jpg"
+                  alt=""
+                  id="upload_photo"
+                  class="profile-photo"
+                />
+                <label class="photo-overlay" for="upload_profile">
+                  <span class="icon icon-camera"></span>
+                </label>
+                <input
+                  class="d-none"
+                  type="file"
+                  onchange="readURL(this)"
+                  id="upload_profile"
+                />
+              </div>
+            </div>
+            <div class="profile-info"></div>
+            <button class="btn btn-give">
+              Give
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+            $("#upload_photo").attr("src", e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

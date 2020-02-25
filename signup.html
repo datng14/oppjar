@@ -43,23 +43,31 @@
                 </div>
                 <div class="form-row">
                   <div class="col-sm-6">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="password">Password</label>
-                      <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        class="form-control"
-                        placeholder="Password"
-                      />
+                      <div class="input-group">
+                        <input
+                          type="password"
+                          name="password"
+                          id="password"
+                          class="form-control"
+                          placeholder="Password"
+                        />
+                        <div class="input-group-append">
+                          <span
+                            class="icon-eye-show pointer icon-toggle-password"
+                            toggle="#password"
+                          />
+                        </div>
+                      </div>
                     </div>
                     <div class="input-field-note">
                       <div class="form-row">
                         <div class="col-sm-6">
-                          <p class="m-b-0">Passwords must be at least:</p>
+                          <p class="mb-0">Passwords must be at least:</p>
                         </div>
                         <div class="col-sm-6">
-                          <p class="m-b-0">
+                          <p class="mb-0">
                             - 6 characters<br />- 1 non alphanumeric
                             character<br />- 1 lowercase ('a'-'b')<br />- 1
                             uppercase ('A'-'Z')
@@ -69,8 +77,9 @@
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="confirm_password">Confirm Password</label>
+                      <div class="input-group">
                       <input
                         type="password"
                         name="confirm_password"
@@ -78,6 +87,12 @@
                         class="form-control"
                         placeholder="Confirm Password"
                       />
+                        <div class="input-group-append">
+                          <span
+                            class="icon-eye-show pointer icon-toggle-password"
+                            toggle="#confirm_password"
+                          />
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -100,7 +115,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="last_name">Last Name</label>
                       <input
                         type="text"
@@ -112,7 +127,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="confirm_password">Birthday</label>
                       <div class="input-group">
                         <input
@@ -188,7 +203,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-sm-4">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="city">City</label>
                       <input
                         type="text"
@@ -200,7 +215,7 @@
                     </div>
                   </div>
                   <div class="col-sm-4">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="city">State</label>
                       <select class="form-control">
                         <option value="texas">Texas</option>
@@ -208,7 +223,7 @@
                     </div>
                   </div>
                   <div class="col-sm-4">
-                    <div class="form-group m-b-0">
+                    <div class="form-group mb-0">
                       <label for="city">ZipCode</label>
                       <input
                         type="text"
@@ -275,5 +290,29 @@
         </div>
       </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function() {
+        $(".icon-toggle-password").click(function() {
+          if ($(this).hasClass("icon-eye-show")) {
+            $(this).removeClass("icon-eye-show");
+            $(this).addClass("icon-eye-unshow");
+          } else {
+            $(this).removeClass("icon-eye-unshow");
+            $(this).addClass("icon-eye-show");
+          }
+          var input = $($(this).attr("toggle"));
+          if (input.attr("type") == "password") {
+            input.attr("type", "text");
+          } else {
+            input.attr("type", "password");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

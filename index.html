@@ -17,19 +17,27 @@
   <body>
     <div class="main-page">
       <div class="sidebar">
-        <img
-          src="./assets/img/oppjar-logo-white.png"
-          alt="oopjar"
-          class="logo"
-        />
+        <a href="index.html">
+          <img
+            src="./assets/img/oppjar-logo-white.png"
+            alt="oopjar"
+            class="logo"
+          />
+        </a>
         <div class="break-line"></div>
         <div class="menu">
           <ul>
             <li class="active">
-              <span class="icon icon-home"></span><span>Home</span>
+              <a href="index.html"><span class="icon icon-home"></span>Home</a>
             </li>
-            <li><span class="icon icon-gift"></span><span>Give</span></li>
-            <li><span class="icon icon-setting"></span><span>Setting</span></li>
+            <li>
+              <a href="give.html"><span class="icon icon-gift"></span>Give</a>
+            </li>
+            <li>
+              <a href="setting.html"
+                ><span class="icon icon-setting"></span>Setting</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -62,130 +70,169 @@
                 <p class="sub-title">You have not created any child pages</p>
               </div>
               <div>
-                <button type="button" class="btn btn-create">Create</button>
+                <a href="create-child-page.html" class="btn btn-create"
+                  >Create</a
+                >
               </div>
             </div>
 
             <div class="children-page-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Birthday</th>
-                    <th>Total Balance</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                    <th>Public Page</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <img
-                        src="./assets/img/avatar.jpg"
-                        alt="oppjar"
-                        class="avatar-icon"
-                      />
-                      <span>Maria Doe</span>
-                    </td>
-                    <td>01/01/2001</td>
-                    <td>$38</td>
-                    <td></td>
-                    <td>
-                      <span class="icon icon-delete"></span>
-                      <span class="icon icon-edit"></span>
-                    </td>
-                    <td>
-                      <span class="icon icon-edit"></span>
-                      <span class="icon icon-link"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="./assets/img/avatar.jpg"
-                        alt="oppjar"
-                        class="avatar-icon"
-                      />
-                      <span>Maria Doe</span>
-                    </td>
-                    <td>01/01/2001</td>
-                    <td>$38</td>
-                    <td></td>
-                    <td>
-                      <span class="icon icon-delete"></span>
-                      <span class="icon icon-edit"></span>
-                    </td>
-                    <td>
-                      <span class="icon icon-edit"></span>
-                      <span class="icon icon-link"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="./assets/img/avatar.jpg"
-                        alt="oppjar"
-                        class="avatar-icon"
-                      />
-                      <span>Maria Doe</span>
-                    </td>
-                    <td>01/01/2001</td>
-                    <td>$38</td>
-                    <td></td>
-                    <td>
-                      <span class="icon icon-delete"></span>
-                      <span class="icon icon-edit"></span>
-                    </td>
-                    <td>
-                      <span class="icon icon-edit"></span>
-                      <span class="icon icon-link"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="./assets/img/avatar.jpg"
-                        alt="oppjar"
-                        class="avatar-icon"
-                      />
-                      <span>Maria Doe</span>
-                    </td>
-                    <td>01/01/2001</td>
-                    <td>$38</td>
-                    <td></td>
-                    <td>
-                      <span class="icon icon-delete"></span>
-                      <span class="icon icon-edit"></span>
-                    </td>
-                    <td>
-                      <span class="icon icon-edit"></span>
-                      <span class="icon icon-link"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        src="./assets/img/avatar.jpg"
-                        alt="oppjar"
-                        class="avatar-icon"
-                      />
-                      <span>Maria Doe</span>
-                    </td>
-                    <td>01/01/2001</td>
-                    <td>$38</td>
-                    <td></td>
-                    <td>
-                      <span class="icon icon-delete"></span>
-                      <span class="icon icon-edit"></span>
-                    </td>
-                    <td>
-                      <span class="icon icon-edit"></span>
-                      <span class="icon icon-link"></span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <section class="children-info">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Birthday</th>
+                      <th>Total Balance</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                      <th>Public Page</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="child-page.html">
+                          <img
+                            src="./assets/img/avatar.jpg"
+                            alt="oppjar"
+                            class="avatar-icon"
+                          />
+                          <span class="username">Maria Doe</span>
+                        </a>
+                      </td>
+                      <td>01/01/2001</td>
+                      <td>$38</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <span class="icon icon-delete"></span>
+                        <span class="icon icon-edit"></span>
+                      </td>
+                      <td>
+                        <span class="icon icon-edit"></span>
+                        <span class="icon icon-link"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="child-page.html">
+                          <img
+                            src="./assets/img/avatar.jpg"
+                            alt="oppjar"
+                            class="avatar-icon"
+                          />
+                          <span class="username">Maria Doe</span>
+                        </a>
+                      </td>
+                      <td>01/01/2001</td>
+                      <td>$38</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <span class="icon icon-delete"></span>
+                        <span class="icon icon-edit"></span>
+                      </td>
+                      <td>
+                        <span class="icon icon-edit"></span>
+                        <span class="icon icon-link"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="child-page.html">
+                          <img
+                            src="./assets/img/avatar-2.jpg"
+                            alt="oppjar"
+                            class="avatar-icon"
+                          />
+                          <span class="username">Maria Doe</span>
+                        </a>
+                      </td>
+                      <td>01/01/2001</td>
+                      <td>$38</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <span class="icon icon-delete"></span>
+                        <span class="icon icon-edit"></span>
+                      </td>
+                      <td>
+                        <span class="icon icon-edit"></span>
+                        <span class="icon icon-link"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="child-page.html">
+                          <img
+                            src="./assets/img/avatar-3.jpg"
+                            alt="oppjar"
+                            class="avatar-icon"
+                          />
+                          <span class="username">Maria Doe</span>
+                        </a>
+                      </td>
+                      <td>01/01/2001</td>
+                      <td>$38</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" checked />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <span class="icon icon-delete"></span>
+                        <span class="icon icon-edit"></span>
+                      </td>
+                      <td>
+                        <span class="icon icon-edit"></span>
+                        <span class="icon icon-link"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <a href="child-page.html">
+                          <img
+                            src="./assets/img/avatar-4.jpg"
+                            alt="oppjar"
+                            class="avatar-icon"
+                          />
+                          <span class="username">Maria Doe</span>
+                        </a>
+                      </td>
+                      <td>01/01/2001</td>
+                      <td>$38</td>
+                      <td>
+                        <label class="switch">
+                          <input type="checkbox" />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <span class="icon icon-delete"></span>
+                        <span class="icon icon-edit"></span>
+                      </td>
+                      <td>
+                        <span class="icon icon-edit"></span>
+                        <span class="icon icon-link"></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
             </div>
           </div>
         </div>
