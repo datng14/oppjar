@@ -43,6 +43,11 @@ select.form-control {
   outline: none;
 }
 
+/* make sure this class name work! */
+.d-none {
+  display: none;
+}
+
 .mr-20 {
   margin-right: 20px;
 }
@@ -75,6 +80,7 @@ select.form-control {
   height: 24px;
   width: 24px;
   z-index: 10;
+  display: inline-block;
 }
 
 .icon-eye-show {
@@ -231,6 +237,22 @@ select.form-control {
 
 .icon-audio {
   background: url(../img/icon-audio.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-school {
+  background: url(../img/icon-school.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-book {
+  background: url(../img/icon-book.svg);
   background-size: cover;
   height: 24px;
   width: 24px;
