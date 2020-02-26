@@ -197,6 +197,14 @@ select.form-control {
   display: inline-block;
 }
 
+.icon-share {
+  background: url(../img/icon-share.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
 .icon-dashboard {
   background: url(../img/icon-dashboard.svg);
   background-size: cover;
@@ -215,6 +223,14 @@ select.form-control {
 
 .icon-video {
   background: url(../img/icon-video.svg);
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.icon-audio {
+  background: url(../img/icon-audio.svg);
   background-size: cover;
   height: 24px;
   width: 24px;

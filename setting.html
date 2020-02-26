@@ -10,6 +10,10 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -157,35 +161,39 @@
                           <div class="form-group">
                             <label for="ssn">SSN</label>
                             <div class="form-row">
-                              <div class="col-sm-4">
+                              <div class="col-sm-3">
                                 <div class="form-group">
                                   <input
-                                    type="password"
+                                    type="text"
                                     class="form-control text-center"
-                                    value="***"
-                                    maxlength="3"
+                                    data-format="***"
+                                    data-mask="***"
                                   />
                                 </div>
                               </div>
-                              <div class="col-sm-4">
-                                <div class="form-group">
-                                  <!-- <div class="dashed-break-line"></div> -->
-                                  <input
-                                    type="password"
-                                    class="form-control text-center w-90"
-                                    value="**"
-                                    maxlength="2"
-                                  />
-                                  <!-- <div class="dashed-break-line"></div> -->
-                                </div>
+                              <div class="col-sm-1">
+                                <div class="dashed-break-line"></div>
                               </div>
                               <div class="col-sm-4">
                                 <div class="form-group">
                                   <input
-                                    type="password"
+                                    type="text"
                                     class="form-control text-center"
-                                    value="****"
-                                    maxlength="4"
+                                    data-format="**"
+                                    data-mask="**"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-sm-1">
+                                <div class="dashed-break-line"></div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="form-group">
+                                  <input
+                                    type="text"
+                                    class="form-control text-center"
+                                    data-format="****"
+                                    data-mask="****"
                                   />
                                 </div>
                               </div>
@@ -228,15 +236,21 @@
                         </div>
                         <div class="col-sm-4">
                           <div class="form-group mb-0">
-                            <label for="city">State</label>
-                            <select class="form-control">
+                            <label for="state">State</label>
+                            <select
+                              class="select-2-state form-control"
+                              name="state"
+                              id="state"
+                            >
                               <option value="texas">Texas</option>
+                              <option value="AL">Alabama</option>
+                              <option value="WY">Wyoming</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-sm-4">
                           <div class="form-group mb-0">
-                            <label for="city">ZipCode</label>
+                            <label for="zipcode">ZipCode</label>
                             <input
                               type="text"
                               name="zipcode"
@@ -312,8 +326,62 @@
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
     <script>
+      $(document).ready(function() {
+        $(".select-2-state").select2();
+
+        document.querySelectorAll("[data-mask]").forEach(function(e) {
+          function format(elem) {
+            const val = doFormat(elem.value, elem.getAttribute("data-format"));
+            elem.value = doFormat(
+              elem.value,
+              elem.getAttribute("data-format"),
+              elem.getAttribute("data-mask")
+            );
+
+            if (elem.createTextRange) {
+              var range = elem.createTextRange();
+              range.move("character", val.length);
+              range.select();
+            } else if (elem.selectionStart) {
+              elem.focus();
+              elem.setSelectionRange(val.length, val.length);
+            }
+          }
+          e.addEventListener("keyup", function() {
+            format(e);
+          });
+          e.addEventListener("keydown", function() {
+            format(e);
+          });
+          format(e);
+        });
+      });
+
+      function doFormat(x, pattern, mask) {
+        var strippedValue = x.replace(/[^0-9]/g, "");
+        var chars = strippedValue.split("");
+        var count = 0;
+
+        var formatted = "";
+        for (var i = 0; i < pattern.length; i++) {
+          const c = pattern[i];
+          if (chars[count]) {
+            if (/\*/.test(c)) {
+              formatted += chars[count];
+              count++;
+            } else {
+              formatted += c;
+            }
+          } else if (mask) {
+            if (mask.split("")[i]) formatted += mask.split("")[i];
+          }
+        }
+        return formatted;
+      }
+
       function readURL(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();

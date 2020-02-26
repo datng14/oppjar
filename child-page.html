@@ -1,81 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Child Page - OPPJAR</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="child-page">
-        <div class="main-content">
-            <div class="header">
-                <a class="dashboard" href="index.html">
-                    <span class="icon icon-dashboard"></span>Back to Dashboard
-                </a>
-                <img class="logo" src="./assets/img/oppjar-logo-white.png" alt="oppjar" />
-                <div class="right-section">
-                    <div class="btn-group">
-                        <button type="button" class="btn account-section dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <img src="./assets/img/avatar-2.jpg" alt="" />
-                            <span>John Doe</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Log Out</button>
-                        </div>
+      <div class="main-content">
+        <div class="header">
+          <a class="dashboard" href="index.html">
+            <span class="icon icon-dashboard"></span>Back to Dashboard
+          </a>
+          <img
+            class="logo"
+            src="./assets/img/oppjar-logo-white.png"
+            alt="oppjar"
+          />
+          <div class="right-section">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn account-section dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src="./assets/img/avatar-2.jpg" alt="" />
+                <span>John Doe</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="child-timeline-page">
+          <div class="cover-section">
+            <img
+              src="./assets/img/cover-photo.jpg"
+              alt=""
+              class="cover-photo"
+              id="cover_photo"
+            />
+            <label class="upload-icon-section" for="upload_cover">
+              <input
+                class="d-none"
+                type="file"
+                onchange="readURL(this, '#cover_photo')"
+                id="upload_cover"
+              />
+              <span class="icon icon-camera pointer"></span>
+            </label>
+            <div class="profile-section">
+              <div class="photo-upload position-relative overflow-hidden">
+                <img
+                  src="./assets/img/avatar-2.jpg"
+                  alt=""
+                  id="avatar_photo"
+                  class="profile-photo"
+                />
+                <label class="photo-overlay" for="upload_profile">
+                  <span class="icon icon-camera"></span>
+                </label>
+                <input
+                  class="d-none"
+                  type="file"
+                  onchange="readURL(this, '#avatar_photo')"
+                  id="upload_profile"
+                />
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="username">Maria Doe</div>
+              <div class="slug">SLUG: Mariadoe111</div>
+            </div>
+            <button class="btn btn-give">
+              Give
+            </button>
+          </div>
+
+          <div class="timeline-section">
+            <div class="left-side">
+              <div class="create-post-block d-flex flex-column">
+                <h2 class="headline">Share Somethings?</h2>
+                <form>
+                  <textarea
+                    name="content"
+                    id="share_post_content"
+                    class="content-area"
+                    placeholder="Say something"
+                    required
+                  ></textarea>
+                  <div class="d-flex justify-content-between">
+                    <div class="media-icon d-flex">
+                      <div class="pointer mr-2">
+                        <span class="icon-overlay"
+                          ><span class="icon icon-photo"></span
+                        ></span>
+                        <span class="icon-text">Photo</span>
+                      </div>
+                      <div class="pointer mr-2">
+                        <span class="icon-overlay"
+                          ><span class="icon icon-audio"></span
+                        ></span>
+                        <span class="icon-text">Audio</span>
+                      </div>
+                      <div class="pointer mr-2">
+                        <span class="icon-overlay"
+                          ><span class="icon icon-video"></span
+                        ></span>
+                        <span class="icon-text">Video</span>
+                      </div>
                     </div>
+                    <div class="post-btn">
+                      <button class="btn btn-create">Post</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="post-list mt-1">
+                <div class="post-item d-flex flex-column">
+                  <div class="post-item-profile-info d-flex">
+                    <img
+                      src="./assets/img/avatar-2.jpg"
+                      alt="oppjar"
+                      class="post-item__avatar"
+                    />
+                    <div class="meta">
+                      <div class="username">Maria Doe</div>
+                      <div class="datetime">1h ago</div>
+                    </div>
+                  </div>
+
+                  <div class="post-item-content mt-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor #incididunt ero labore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud
+                      exercitation ullamco poriti laboris nisi ut aliquip ex ea
+                      commodo consequat.
+                    </p>
+                    <img src="./assets/img/cover-photo.jpg" alt="" />
+                  </div>
+
+                  <div class="post-item-interaction d-flex mt-2">
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span class="icon icon-like mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <!-- Class 'commentId001' is dynamic, using for activate after clicking -->
+
+                    <div
+                      class="post-item-comment pointer d-flex align-items-center commentId001"
+                      data-toggle="collapse"
+                      data-target="#commentId001"
+                      aria-expanded="false"
+                      aria-controls="commentId001"
+                      onclick="toggleComment('.commentId001')"
+                    >
+                      <span class="icon icon-comment mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span
+                        class="icon icon-share mr-1"
+                        title="Share this post"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Comment -->
+                  <div class="comment-section collapse" id="commentId001">
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-3.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Eos laboriosam, fuga sit aperiam eum amet ratione.
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span
+                            class="btn-rep replyId001"
+                            data-toggle="collapse"
+                            data-target="#replyId001"
+                            aria-expanded="false"
+                            aria-controls="replyId001"
+                            onclick="toggleComment('.replyId001')"
+                            >Reply</span
+                          >
+                        </div>
+                        <!-- Reply comment -->
+                        <div class="reply-list collapse" id="replyId001">
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-2.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-4.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Reply comment -->
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-4.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Minus ipsam odio ratione sapiente, hic,
+                            deserunt, nostrum enim eveniet nulla explicabo
+                            temporibus sunt?
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-2.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>Lorem ipsum dolor</p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Comment -->
                 </div>
+
+                <div class="post-item d-flex flex-column">
+                  <div class="post-item-profile-info d-flex">
+                    <img
+                      src="./assets/img/avatar-2.jpg"
+                      alt="oppjar"
+                      class="post-item__avatar"
+                    />
+                    <div class="meta">
+                      <div class="username">Maria Doe</div>
+                      <div class="datetime">1h ago</div>
+                    </div>
+                  </div>
+
+                  <div class="post-item-content mt-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor #incididunt ero labore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud
+                      exercitation ullamco poriti laboris nisi ut aliquip ex ea
+                      commodo consequat.
+                    </p>
+                    <img src="./assets/img/cover-photo.jpg" alt="" />
+                  </div>
+
+                  <div class="post-item-interaction d-flex mt-2">
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span class="icon icon-like mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <!-- Class 'commentId002' is dynamic, using for activate after clicking -->
+
+                    <div
+                      class="post-item-comment pointer d-flex align-items-center commentId002"
+                      data-toggle="collapse"
+                      data-target="#commentId002"
+                      aria-expanded="false"
+                      aria-controls="commentId002"
+                      onclick="toggleComment('.commentId002')"
+                    >
+                      <span class="icon icon-comment mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span
+                        class="icon icon-share mr-1"
+                        title="Share this post"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Comment -->
+                  <div class="comment-section collapse" id="commentId002">
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-3.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Eos laboriosam, fuga sit aperiam eum amet ratione.
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                          <span
+                            class="btn-rep replyId002"
+                            data-toggle="collapse"
+                            data-target="#replyId002"
+                            aria-expanded="false"
+                            aria-controls="replyId002"
+                            onclick="toggleComment('.replyId002')"
+                            >Reply</span
+                          >
+                        </div>
+                        <!-- Reply comment -->
+                        <div class="reply-list collapse" id="replyId002">
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-2.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-4.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Reply comment -->
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-4.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Minus ipsam odio ratione sapiente, hic,
+                            deserunt, nostrum enim eveniet nulla explicabo
+                            temporibus sunt?
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-2.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>Lorem ipsum dolor</p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Comment -->
+                </div>
+
+                <div class="post-item d-flex flex-column">
+                  <div class="post-item-profile-info d-flex">
+                    <img
+                      src="./assets/img/avatar-2.jpg"
+                      alt="oppjar"
+                      class="post-item__avatar"
+                    />
+                    <div class="meta">
+                      <div class="username">Maria Doe</div>
+                      <div class="datetime">1h ago</div>
+                    </div>
+                  </div>
+
+                  <div class="post-item-content mt-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor #incididunt ero labore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud
+                      exercitation ullamco poriti laboris nisi ut aliquip ex ea
+                      commodo consequat.
+                    </p>
+                    <img src="./assets/img/cover-photo.jpg" alt="" />
+                  </div>
+
+                  <div class="post-item-interaction d-flex mt-2">
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span class="icon icon-like mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <!-- Class 'commentId003' is dynamic, using for activate after clicking -->
+
+                    <div
+                      class="post-item-comment pointer d-flex align-items-center commentId003"
+                      data-toggle="collapse"
+                      data-target="#commentId003"
+                      aria-expanded="false"
+                      aria-controls="commentId003"
+                      onclick="toggleComment('.commentId003')"
+                    >
+                      <span class="icon icon-comment mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span
+                        class="icon icon-share mr-1"
+                        title="Share this post"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Comment -->
+                  <div class="comment-section collapse" id="commentId003">
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-3.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Eos laboriosam, fuga sit aperiam eum amet ratione.
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span
+                            class="btn-rep replyId003"
+                            data-toggle="collapse"
+                            data-target="#replyId003"
+                            aria-expanded="false"
+                            aria-controls="replyId003"
+                            onclick="toggleComment('.replyId003')"
+                            >Reply</span
+                          >
+                        </div>
+                        <!-- Reply comment -->
+                        <div class="reply-list collapse" id="replyId003">
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-2.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-4.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Reply comment -->
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-4.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Minus ipsam odio ratione sapiente, hic,
+                            deserunt, nostrum enim eveniet nulla explicabo
+                            temporibus sunt?
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-2.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>Lorem ipsum dolor</p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Comment -->
+                </div>
+
+                <div class="post-item d-flex flex-column">
+                  <div class="post-item-profile-info d-flex">
+                    <img
+                      src="./assets/img/avatar-2.jpg"
+                      alt="oppjar"
+                      class="post-item__avatar"
+                    />
+                    <div class="meta">
+                      <div class="username">Maria Doe</div>
+                      <div class="datetime">1h ago</div>
+                    </div>
+                  </div>
+
+                  <div class="post-item-content mt-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor #incididunt ero labore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud
+                      exercitation ullamco poriti laboris nisi ut aliquip ex ea
+                      commodo consequat.
+                    </p>
+                    <img src="./assets/img/cover-photo.jpg" alt="" />
+                  </div>
+
+                  <div class="post-item-interaction d-flex mt-2">
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span class="icon icon-like mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <!-- Class 'commentId004' is dynamic, using for activate after clicking -->
+
+                    <div
+                      class="post-item-comment pointer d-flex align-items-center commentId004"
+                      data-toggle="collapse"
+                      data-target="#commentId004"
+                      aria-expanded="false"
+                      aria-controls="commentId004"
+                      onclick="toggleComment('.commentId004')"
+                    >
+                      <span class="icon icon-comment mr-1"></span>
+                      <span class="icon-text">100</span>
+                    </div>
+                    <div
+                      class="post-item-reaction pointer d-flex align-items-center"
+                    >
+                      <span
+                        class="icon icon-share mr-1"
+                        title="Share this post"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Comment -->
+                  <div class="comment-section collapse" id="commentId004">
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-3.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Eos laboriosam, fuga sit aperiam eum amet ratione.
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span
+                            class="btn-rep replyId004"
+                            data-toggle="collapse"
+                            data-target="#replyId004"
+                            aria-expanded="false"
+                            aria-controls="replyId004"
+                            onclick="toggleComment('.replyId004')"
+                            >Reply</span
+                          >
+                        </div>
+                        <!-- Reply comment -->
+                        <div class="reply-list collapse" id="replyId004">
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-2.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="comment-item d-flex">
+                            <img
+                              src="./assets/img/avatar-4.jpg"
+                              alt=""
+                              class="us-avatar mr-2"
+                            />
+                            <div class="comment-item-right-side">
+                              <div class="comment-item-content">
+                                <p>
+                                  Eos laboriosam, fuga sit aperiam eum amet
+                                  ratione.
+                                </p>
+                              </div>
+                              <div class="meta">
+                                <span class="time">6m</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Reply comment -->
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-4.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Minus ipsam odio ratione sapiente, hic,
+                            deserunt, nostrum enim eveniet nulla explicabo
+                            temporibus sunt?
+                          </p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-item d-flex">
+                      <img
+                        src="./assets/img/avatar-2.jpg"
+                        alt=""
+                        class="us-avatar mr-2"
+                      />
+                      <div class="comment-item-right-side">
+                        <div class="comment-item-content">
+                          <p>Lorem ipsum dolor</p>
+                        </div>
+                        <div class="meta">
+                          <span class="time">6m</span>
+                          <span class="btn-rep">Reply</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Comment -->
+                </div>
+              </div>
             </div>
 
-            <div class="child-timeline-page">
-                <div class="cover-section">
-                    <img src="./assets/img/cover-photo.jpg" alt="" class="cover-photo" id="cover_photo" />
-                    <label class="upload-icon-section" for="upload_cover">
-                        <input class="d-none" type="file" onchange="readURL(this, '#cover_photo')" id="upload_cover" />
-                        <span class="icon icon-camera pointer"></span>
-                    </label>
-                    <div class="profile-section">
-                        <div class="photo-upload position-relative overflow-hidden">
-                            <img src="./assets/img/avatar-2.jpg" alt="" id="avatar_photo" class="profile-photo" />
-                            <label class="photo-overlay" for="upload_profile">
-                                <span class="icon icon-camera"></span>
-                            </label>
-                            <input class="d-none" type="file" onchange="readURL(this, '#avatar_photo')"
-                                id="upload_profile" />
-                        </div>
-                    </div>
-                    <div class="profile-info"></div>
-                    <button class="btn btn-give">
-                        Give
-                    </button>
+            <div class="right-side">
+              <div class="balancer">
+                <h2 class="balancer__title">Total Balance</h2>
+                <span class="balancer__content">$380</span>
+              </div>
+              <div class="child-info">
+                <div
+                  class="child-info__header d-flex justify-content-between align-items-center"
+                >
+                  <h2 class="info__title">Child Information</h2>
+                  <a href="setting.html"
+                    ><span class="icon icon-edit"></span
+                  ></a>
                 </div>
+                <div class="child-info__content">
+                  <table class="table table-borderless">
+                    <tr>
+                      <th>First Name</th>
+                      <td>Maria</td>
+                    </tr>
+                    <tr>
+                      <th>Last Name</th>
+                      <td>Doe</td>
+                    </tr>
+                    <tr>
+                      <th>Birthday</th>
+                      <td>01/01/2011</td>
+                    </tr>
+                    <tr>
+                      <th>School</th>
+                      <td>AAA School</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <script>
-        function readURL(input, id) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $(id).attr("src", e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
+      function toggleComment(cls) {
+        if ($(cls).hasClass("font-weight-bold")) {
+          $(cls).removeClass("font-weight-bold");
+        } else {
+          $(cls).addClass("font-weight-bold");
         }
-    </script>
-</body>
+      }
+      function readURL(input, id) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
 
+          reader.onload = function(e) {
+            $(id).attr("src", e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
 </html>
